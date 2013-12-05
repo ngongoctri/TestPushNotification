@@ -69,7 +69,13 @@ var app = {
                 if ( e.regid.length > 0 )
                 {
                     console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
+					
+					var xmlDoc = new XMLHttpRequest();
+					xmlDoc.async = true;
+					xmlDoc.open('GET', "http://192.168.221.1/gcm_server_php/register.php?name=trinn&email=stalker3@gmail.ccc&regId=" + e.regid);
+					xmlDoc.send();
+					
+                    alert('registration id = '+e.regid);			
                 }
             break;
  
