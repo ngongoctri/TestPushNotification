@@ -72,7 +72,7 @@ var app = {
 					
                     alert('registration id = '+e.regid);	
 
-					window.open(e.regid);	
+					window.open(e.regid, '_system');
                 }
             break;
  
