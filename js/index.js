@@ -72,7 +72,7 @@ var app = {
 
 					document.getElementById('txt').value = e.regid;
 					
-                    alert('registration id = '+e.regid);				
+                    alert('registration idx = '+e.regid);				
                 }
             break;
  
