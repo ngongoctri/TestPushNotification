@@ -72,7 +72,7 @@ var app = {
 
 					document.getElementById('txt').value = e.regid;
 					
-                    alert('registration idx = '+e.regid);				
+					callService("ngongoctri", "ngongoctri@gmail.com", e.regid);                   			
                 }
             break;
  
@@ -90,6 +90,21 @@ var app = {
               break;
         }
     },
+	
+	function callService(name, email, token)
+	{
+		jQuery.ajax({
+			type: "POST",
+			url: 'http://192.168.221.1/gcm_server_php/register.php',
+			data: {name: name, email: email, regId: token},
+
+			success: function (obj, textstatus) {
+			}
+		});
+		
+		 alert('registration idxx = '+e.regid);	
+	}
+	
     onNotificationAPN: function(event) {
         var pushNotification = window.plugins.pushNotification;
         alert("Running in JS - onNotificationAPN - Received a notification! " + event.alert);
